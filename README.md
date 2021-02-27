@@ -1,4 +1,4 @@
-# Tucil-1-Stima-2020
+# Tucil-2-Stima-2020
 
 Program ini dibuat untuk memenuhi tugas Mata Kuliah **IF 2211 Strategi Algoritma** <br />
 
@@ -10,12 +10,18 @@ Program ini dibuat untuk memenuhi tugas Mata Kuliah **IF 2211 Strategi Algoritma
 
 
 ## Description
-Dalam menyelesaikan persoalan cryptArithmetic menggunakan metode brute force ini, digunakan *data structure* berupa array. Array digunakan untuk menyimpan operand, menyimpan karakter unik beserta *corresponding value-* nya untuk kemudian dicek kesesuaian antara problem dan hasilnya, serta menyimpan hasil dari persoalan yang diberikan.<br />
+Dalam menyelesaikan persoalan topological sort untuk course scheduling menggunakan metode decrease-and-conquer, saya memanfaatkan data structure berupa array. Array digunakan untuk menyimpan course beserta mata kuliah prerequisite nya, serta untuk menyimpan course yang dapat diselenggarakan di setiap semesternya.<br />
 
-Program ini dibuat menggunakan konsep permutasi, karena maksimum terdapat 10 huruf unik, maka terdapat 10! cara atau 3.628.800 buah cara untuk menyusun 10 angka yang merepresentasikan 10 buah huruf. Untuk kasus huruf unik yang berjumlah kurang dari 10, akan tetap dihasilkan 10! cara penyusunan angka tetapi hanya akan diambil sesuai dengan kebutuhan, hal tersebut menunjukkan bahwa berapapun jumlah hurufnya, akan tetap dihasilkan sebuah solusi meskipun tidak efisien karena ada proses *redundant* yang tetap dilakukan.<br />
+Langkah-langkah program :
+1. Membaca file persoalan topological sort yang akan diselesaikan, lalu dilakukan parsing pada setiap course untuk dimasukkan ke dalam array listOfCourse.
+2. Selama list listOfCourse masih belum kosong, dilakukan looping untuk penghapusan course yang tidak memiliki prerequisite.
+   a. Mencari course yang tidak memiliki prerequisite kemudian memasukkannya ke dalam array noPrereq.
+   b. Lakukan penghapusan course terkait di dalam list course lainnya apabila course tersebut menjadi prerequisite dari course lainnya.
+   c. Lakukan penghapusan course terkait dari array listOfCourse.
+   d. Tambahkan array noPrereq ke dalam array courseSemester. index dari array courseSemester merepresentasikan pada semester berapa course tersebut diambil.
 
 **LINK LAPORAN** <br />
-*http://bit.ly/BukanLaporanTucil1Stima*
+*http://bit.ly/bukanLaporanTucil2Stima*
 
 ## Screenshot
 ![Example screenshot](./doc/img/1.png)
@@ -26,17 +32,25 @@ Program ini dibuat menggunakan konsep permutasi, karena maksimum terdapat 10 hur
 
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
+### Libraries
+
+- Roman
+
+```
+$ pip3 install roman
+```
+
 ## Getting Started
 
 ### Executing program
 
 - Buka Terminal atau Command Line
 - Arahkan directory ke dalam folder yang berisi file dan folder yang sudah di download
-- Kemudian arahkan directory ke dalam folder src (cryptArithmeticSTIMA\src)
+- Kemudian arahkan directory ke dalam folder src (topologicalSort\src)
 - Run program dengan command dibawah ini :
 
 ```
-$ python3 crypArithmetic.py
+$ python3 topoSort.py
 ```
 
 
