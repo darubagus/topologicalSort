@@ -15,10 +15,10 @@ Dalam menyelesaikan persoalan topological sort untuk course scheduling menggunak
 Langkah-langkah program :
 1. Membaca file persoalan topological sort yang akan diselesaikan, lalu dilakukan parsing pada setiap course untuk dimasukkan ke dalam array listOfCourse.
 2. Selama list listOfCourse masih belum kosong, dilakukan looping untuk penghapusan course yang tidak memiliki prerequisite.
-   a. Mencari course yang tidak memiliki prerequisite kemudian memasukkannya ke dalam array noPrereq.
-   b. Lakukan penghapusan course terkait di dalam list course lainnya apabila course tersebut menjadi prerequisite dari course lainnya.
-   c. Lakukan penghapusan course terkait dari array listOfCourse.
-   d. Tambahkan array noPrereq ke dalam array courseSemester. index dari array courseSemester merepresentasikan pada semester berapa course tersebut diambil.
+   - Mencari course yang tidak memiliki prerequisite kemudian memasukkannya ke dalam array noPrereq.
+   - Lakukan penghapusan course terkait di dalam list course lainnya apabila course tersebut menjadi prerequisite dari course lainnya.
+   - Lakukan penghapusan course terkait dari array listOfCourse.
+   - Tambahkan array noPrereq ke dalam array courseSemester. index dari array courseSemester merepresentasikan pada semester berapa course tersebut diambil.
 
 **LINK LAPORAN** <br />
 *http://bit.ly/bukanLaporanTucil2Stima*
