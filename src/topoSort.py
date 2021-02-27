@@ -7,7 +7,8 @@
 import roman as bm
 
 def readFile(testcase):
-
+    # I.S -
+    # F.S Mengembalikan listOfCourse sesuai dengan bentuk yang diinginkan
     listOfCourse = []
     line = inString.readlines()
 
@@ -22,7 +23,7 @@ def readFile(testcase):
     for i in range(len(listOfCourse)):
         listOfCourse[i] = listOfCourse[i].split(',')
     
-    # Bentuk List Of Course : [[C1,C3], [C2,C1,C4], [C3], [C4,C1,C3], [C5,C2,C4]]
+    # Bentuk List Of Course : [["C1","C3"], ["C2","C1","C4"], ["C3"], ["C4","C1","C3"], ["C5","C2","C4"]]
     return listOfCourse
 
 def printPersoalan(testcase) :
@@ -32,7 +33,17 @@ def printPersoalan(testcase) :
     i = 0
     while (i < len(line)):
         cleanString = line[i].replace("\n","")
-        print(cleanString)
+        cleanString = cleanString.replace(".","")
+        cleanString = cleanString.split(',')
+        if (len(cleanString)==1):
+            print("Course "+cleanString[0]+" has no prerequisite.")
+        else :
+            print("Course "+cleanString[0]+"'s prerequisite(s) are ", end="")
+            for j in range(1,len(cleanString)):
+                if (j != len(cleanString)-1) :
+                    print(" "+cleanString[j]+",", end='')
+                else :
+                    print(" "+cleanString[j])
         i+=1
 
 def topologicalSKRT(listOfCourse):
@@ -59,6 +70,7 @@ def topologicalSKRT(listOfCourse):
                     status = False
                     while ((not status) and k < len(listOfCourse)):
                         if (noPrereq[i] == listOfCourse[j][k]) :
+                            # hapus course yang tidak memiliki prerequisite dari list prerequisite course lain
                             del listOfCourse[j][k]
                             status = True
                         else :
