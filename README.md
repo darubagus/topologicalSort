@@ -28,7 +28,7 @@ Langkah-langkah program :
 ![Example screenshot](./img/2.png)
 ![Example screenshot](./img/3.png)
 
-### Build With
+## Build With
 
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
