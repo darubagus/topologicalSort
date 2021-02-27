@@ -24,9 +24,9 @@ Langkah-langkah program :
 *http://bit.ly/bukanLaporanTucil2Stima*
 
 ## Screenshot
-![Example screenshot](./doc/img/1.png)
-![Example screenshot](./doc/img/2.png)
-![Example screenshot](./doc/img/3.png)
+![Example screenshot](./img/1.png)
+![Example screenshot](./img/2.png)
+![Example screenshot](./img/3.png)
 
 ### Build With
 
