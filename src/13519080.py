@@ -94,13 +94,17 @@ def topologicalSKRT(listOfCourse):
 def printSemester(courseSemester) :
     #Mencetak data course per semester
     for i in range(len(courseSemester)) :
-        print("Semester ", bm.toRoman(i+1), " :", end='')
-        # Mencetak data course yang ada di semester yang bersangkutan
-        for j in range(len(courseSemester[i])):
-            if (j != len(courseSemester[i])-1) :
-                print(" "+courseSemester[i][j]+",", end='')
-            else :
-                print(" "+courseSemester[i][j])
+        if (i > 8) :
+            print("You're dropped out because of exceeding the amount limit of the semester.")
+            break
+        else :
+            print("Semester ", bm.toRoman(i+1), " :", end='')
+            # Mencetak data course yang ada di semester yang bersangkutan
+            for j in range(len(courseSemester[i])):
+                if (j != len(courseSemester[i])-1) :
+                    print(" "+courseSemester[i][j]+",", end='')
+                else :
+                    print(" "+courseSemester[i][j])
 
 # Main Program
 fileName = input("Masukkan nama file : ")
